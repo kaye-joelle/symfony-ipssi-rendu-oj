@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\CageRepository;
+use App\Repository\CartRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: CageRepository::class)]
-class Cage
+#[ORM\Entity(repositoryClass: CartRepository::class)]
+class Cart
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -15,21 +15,21 @@ class Cage
     private ?int $id = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $cage = null;
+    private ?string $cart = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getCage(): ?string
+    public function getcart(): ?string
     {
-        return $this->cage;
+        return $this->cart;
     }
 
-    public function setCage(?string $cage): self
+    public function setCart(?string $cart): self
     {
-        $this->cage = $cage;
+        $this->cart = $cart;
 
         return $this;
     }
