@@ -3,7 +3,7 @@
 {% block title %}Hello UserController!{% endblock %}
 
 {% block body %}
-    <h1>Hello {{ user.email }}</h1>
+    <h1>Bienvenue {{ user.email }}</h1>
     {{ form_start(form) }}
         {{ form_widget(form) }}
         <button class="btn action_button">{{ button_label|default('Save') }}</button>

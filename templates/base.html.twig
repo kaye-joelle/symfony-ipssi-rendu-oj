@@ -16,12 +16,20 @@
     <body>
         <header>
         <nav>
-            <a href="{{ path('app_home') }}">Home</a>
-            <a href="{{ path('app_products') }}">Produits</a>
+            <a href="{{ path('app_home') }}">Accueil</a>
+            {# <a href="{{ path('app_article_index') }} #}
+            {# <a href="{{ path('app_registration') }}">Register</a> #}
+
             {% if app.user %}
+                <a href="{{ path('app_products') }}">Produits</a>
+                {# <a href="{{ path('app_admin') }}">Admin</a> #}
+                
                 <a href="{{ path('app_user_show', {'id': app.user.id}) }}">Profil</a>
+                {# Le panier est au bon endroit mais ne fonctionne pas #}
+                {# <a href="{{ path('app_cart') }}">Panier</a> #}
                 <a href="{{ path('app_logout') }}">Déconnexion</a>
             {% else %}
+                <a href="{{ path('app_register') }}">S'inscrire</a>
                 <a href="{{ path('app_login') }}">Se Connecter</a>
             {% endif %}
             {% if is_granted("ROLE_ADMIN") %}

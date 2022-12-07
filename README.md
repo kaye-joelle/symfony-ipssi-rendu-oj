@@ -32,7 +32,7 @@
 ## Run symfony server
 
 ### A executer une seule fois
-    symfony server:ca: install
+    symfony server:ca:install
 ### A lancer à chaque fois 
     symfony server:start
 

@@ -3,6 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use App\Entity\User;
+use App\Entity\Cart;
+use App\Entity\CartProduct;
+
+
 use App\Repository\ArticleRepository;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -28,15 +33,15 @@ class ContentController extends AbstractController
     public function getProducts(ProductRepository $productRepository): Response
     {
         $products = $productRepository->findAll();
-
-        $user = $this->getUser();
-        $cart = $user->getCart();
-        $p = $cart->getCartProducts()->toArray();
+        // $products[$key] = $product->getProducts();
+        // $user = $this->getUser();
+        // $cart = $user->getCart();
+        // $p = $cart->getCartProducts()->toArray();
         
-        $productss = [];
-        foreach ($p as $key => $product) {
-            $products[$key] = $product->getProducts();
-        }
+        // $productss = [];
+        // foreach ($p as $key => $product) {
+        //     $products[$key] = $product->getProducts();
+        // }
         //dd($productss);
 
 

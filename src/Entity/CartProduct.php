@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use App\Repository\ContentController;
 use App\Repository\CartProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 
